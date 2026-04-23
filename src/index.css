@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", serif;
+  --font-sans: "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-ink: #1a1410;
+  --color-ink-soft: #3a2e24;
+  --color-paper: #fdf6e8;
+  --color-paper-dark: #f5e9cf;
+  --color-cream: #faf3e0;
+  --color-amber-brand: #d97706;
+  --color-amber-deep: #b45309;
+  --color-rust: #c2410c;
+  --color-forest: #15803d;
+  --color-berry: #9f1239;
+}
+
+html, body {
+  font-family: "Outfit", sans-serif;
+  background: #fdf6e8;
+  color: #1a1410;
+}
+
+/* ticket-style borders */
+.ticket {
+  background: #fffaf0;
+  border: 2px solid #1a1410;
+  box-shadow: 6px 6px 0 #1a1410;
+}
+.ticket-amber {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border: 2px solid #1a1410;
+  box-shadow: 6px 6px 0 #1a1410;
+}
+.ticket-dark {
+  background: #1a1410;
+  color: #fdf6e8;
+  border: 2px solid #1a1410;
+  box-shadow: 6px 6px 0 #d97706;
+}
+
+.btn-primary {
+  background: #1a1410;
+  color: #fdf6e8;
+  border: 2px solid #1a1410;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  box-shadow: 4px 4px 0 #d97706;
+  transition: all 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+.btn-primary:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #d97706;
+}
+.btn-primary:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #d97706;
+}
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-amber {
+  background: #d97706;
+  color: #fdf6e8;
+  border: 2px solid #1a1410;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  box-shadow: 4px 4px 0 #1a1410;
+  transition: all 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+.btn-amber:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #1a1410;
+}
+.btn-amber:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #1a1410;
+}
+.btn-amber:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: #1a1410;
+  border: 2px solid #1a1410;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  transition: all 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+.btn-ghost:hover {
+  background: #1a1410;
+  color: #fdf6e8;
+}
+
+.input-field {
+  width: 100%;
+  background: #fffaf0;
+  border: 2px solid #1a1410;
+  padding: 0.65rem 0.9rem;
+  font-family: "Outfit", sans-serif;
+  font-size: 0.95rem;
+  color: #1a1410;
+  transition: all 0.15s;
+}
+.input-field:focus {
+  outline: none;
+  box-shadow: 4px 4px 0 #d97706;
+  transform: translate(-2px, -2px);
+}
+
+.divider-dashed {
+  border-top: 2px dashed #1a1410;
+}
+
+/* subtle noise-like background for hero */
+.hero-pattern {
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(217,119,6,0.12) 0, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(194,65,12,0.1) 0, transparent 40%),
+    repeating-linear-gradient(45deg, transparent 0 14px, rgba(26,20,16,0.03) 14px 15px);
+}
+
+.stamp {
+  display: inline-block;
+  border: 2px solid currentColor;
+  padding: 0.15rem 0.5rem;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transform: rotate(-2deg);
+}
+
+/* Marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee 40s linear infinite;
+}
+
+/* Progress ring for ad viewer */
+.ring-bg { stroke: rgba(26,20,16,0.15); }
+.ring-fg { stroke: #d97706; transition: stroke-dashoffset 1s linear; }
